@@ -8,10 +8,13 @@ class Sphinx
 
   public static Dictionary<int, string> answers = new Dictionary<int, string>() { {0, "silence"}, {1, "Milwaukee"}, {2, "Towel"}, {3, "A coin"} };
 
+  public static int index = 0;
+
   static void Main()
   {
-    Random rand = new Random();
-    int index = rand.Next(0, 4);
+    // Random rand = new Random();
+    // int index = rand.Next(0, 4);
+    Randomize();
 
     Console.WriteLine(questions[index]);
     string input = Console.ReadLine();
@@ -24,5 +27,11 @@ class Sphinx
     {
       Console.WriteLine("You have been defeated");
     }
+  }
+
+  static void Randomize()
+  {
+    Random rand = new Random();
+    index = rand.Next(0, 4);
   }
 }
